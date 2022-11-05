@@ -105,30 +105,55 @@ Hasła pochodzą ze słownika <b> rockyou </b>
 ## Rozwiązanie
 1. Uruchamiamy komputer z zainstalowanym WireShark, w tym wypadku jest to Kali Linux na Hyper-V Microsoft
 2. Wybieramy interfejs do nasłuchu, jeśli jest to nasz komputer to główny interfejs sieciowy (tutaj eth0) jeśli chcemy inny komputer to dublujemy na switchu port (port mirroring), dodajemy dodatkową sieciówkę i wybieramy port z tym interfejsem do nasłuchu. W naszym przypadku słuchamy ruchu lokalnego na naszym pc.
+
 ![zad3_2](https://user-images.githubusercontent.com/113295774/200120803-4dba04a8-aeb2-490f-a1da-f02dd4571cec.png)
+
 3.	Nasłuchujemy pakietów:
+
 ![zad3_3](https://user-images.githubusercontent.com/113295774/200120824-6214d526-826f-465d-b785-14a79a4ff7a0.png)
+
 4.	Wchodzimy na stronę internetową aby sprawdzić działanie logowania ( w naszym wypadku http://testphp.vulnweb.com/login.php)
+
 ![zad3_4](https://user-images.githubusercontent.com/113295774/200120844-80297f3f-4ec0-42a7-b018-b982dbafa50c.png)
+
 5.	Wpisujemy dane do logowania test test
+
 ![zad3_5](https://user-images.githubusercontent.com/113295774/200120863-3b70e6e5-5563-4e0b-88bd-6d35c995b85e.png)
+
 6.	Zatrzymujemy nasłuch pakietów, dane zostały już przechwycone:
+
 ![zad3_6](https://user-images.githubusercontent.com/113295774/200120883-bd20aaeb-ae4e-4565-8e9f-4713d4bd6770.png)
+
 Obok Niebieskiego Żagielka do rozpoczęcia przechwytywania pakietów jest czerwony kwadrat stop.
+
 7.	Filtrujemy ruch aby pokazać tylko pakiety, którymi jesteśmy zainteresowani wykorzystując
+
 ![zad3_7](https://user-images.githubusercontent.com/113295774/200120913-da5c6e5f-97ff-4911-9bb8-c4167fea6e19.png)
+
 8.	Filtr do logowania na http ma składnię:
+
 http.request.method == POST
+
 ![zad3_8](https://user-images.githubusercontent.com/113295774/200120930-d1af83d8-9272-433a-a299-e7c80bdb706e.png)
+
 9.	Prawym na pakiet, Follow, TCPStream
+
 ![zad3_9](https://user-images.githubusercontent.com/113295774/200120936-5a9a9e06-08c3-4cf6-a38b-28425aec8383.png)
+
 10.	Pokazuje się okienko, w którym na dole w Find: wpisujemy uname (znajdzie w ten sposób dane do logowania):
+
 ![zad3_10](https://user-images.githubusercontent.com/113295774/200120948-b9d928b9-4e15-4930-b91f-95d79366af7a.png)
+
 Jak widać pierwsze dane do logowania są niepoprawne uname=loginSDA pass=pass 
+
 Kończy się to komunikatem you must login
+
 11.	Następne dane do logowania są już prawidłowe uname=test pass=test
+
 ![zad3_11](https://user-images.githubusercontent.com/113295774/200120958-2cf2d12c-a791-4535-9540-1be2fb0435e3.png)
+
 12.	I tym oto sposobem znaleźliśmy dane do logowania.
+
 ![zad3_12](https://user-images.githubusercontent.com/113295774/200120970-dae49a11-8c1f-4d55-86e3-c1a1d82e4ae0.png)
 
 # Zadanie 4 - Analiza ruchu SSH
@@ -142,27 +167,49 @@ Kończy się to komunikatem you must login
 
 ## Rozwiązanie
 1.	Zmiana konfiguracji vsftpd do zapisu
+
 ![zad4_1](https://user-images.githubusercontent.com/113295774/200121264-580e223e-16f7-4f8e-86d7-1ddd0fb678cf.png)
+
 Wystarczy odhashować linie 
+
 Write_enable=YES
+
 Local_umask=022
+
 2.	Restart serwera vsftpd	
+
 Z prawami roota wykonać komendę
+
 Systemctl restart vsftpd
+
 3.	Uruchamiamy na komputerze kali klienta wireshar, rozpoczynamy nasłuch jak w zadaniu 3 na porcie wychodzącym ( w tym wypadku eth0)
+
 4.	Uruchamiamy klienta ftp
+
 5.	Wpisujemy dane do połączenia i nawiązujemy połączenie
+
 ![zad4_5](https://user-images.githubusercontent.com/113295774/200121288-137da6cc-b247-401c-8ac3-5c59585e41ac.png)
+
 6.	Przesyłamy pliki sekret1.txt oraz sekret2.txt
+
 ![zad4_6](https://user-images.githubusercontent.com/113295774/200121305-85daff80-b354-4e90-8c64-9220cb89e861.png)
+
 7.	Zatrzymujemy i zapisujemy wynik wireshark
+
 8.	Filtrujemy wynik w poszukiwaniu danych po ftp filtrem ftp-data
+
 ![zad4_8](https://user-images.githubusercontent.com/113295774/200121319-4d6fb120-f10c-481f-92b3-e6aa75b90a17.png)
+
 9.	Eksportowanie złapanego pakietu do pliku za pomocą:
+
 Export Packet Bytes Ctrl+Shift+X
+
 Albo Show Packet Bytes i Save as…
+
 ![zad4_9](https://user-images.githubusercontent.com/113295774/200121348-e8608386-e477-48c2-aaa2-b8edf1d31111.png)
+
 10.	Zakończone
+
 ![zad4_10](https://user-images.githubusercontent.com/113295774/200121365-a91b1cb6-265e-4d56-9eee-d1583390b216.png)
 
 # Zadanie 5 - Analiza ruchu FTP
