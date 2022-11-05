@@ -84,6 +84,6 @@ Hasło składa się z dokładnie z 6 znaków alfanumerycznych. (w zadaniu jest b
 
 Rodzaj hashu: SHA2-512 = -m 1700
 
-TBD (in progress)
+![zad1_3_1](https://user-images.githubusercontent.com/113295774/200120447-0b6a6aa3-08c8-48c9-a8be-5c80321f7690.png)
 
-Hasło: TBD
+Hasło: T0^^3k
