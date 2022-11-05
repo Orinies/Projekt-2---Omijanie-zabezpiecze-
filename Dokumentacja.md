@@ -82,6 +82,16 @@ Hasło: Asia
 ## Przypadek 3
 Hasło składa się z dokładnie z 6 znaków alfanumerycznych. (w zadaniu jest błąd - występują również znaki specjalne)
 
+<b>hashcat -a 3 -m N hash -i -1 ?ua ?1?1?1?1?1?1 </b>
+
+-a 3 - attack mode - 3 - metoda ataku brute-force
+
+-m N - mode - N - rodzaj używanego hashu
+
+-i - increment - hasło jest łamane "stopniowo", biorąc pod uwagę po kolei każdą ilość znaków podaną we wzorcu 
+
+-1 ?a ?1?1?1?1?1?1 - charset - -1 oznacza numer zestawu znaków używanych do łamania haseł; można podać wzorzec (?a - dowolny znak; ?1?1?1?1?1?1 sześć znaków z podanego poprzednio zakresu) lub podać je w pliku
+
 Rodzaj hashu: SHA2-512 = -m 1700
 
 ![zad1_3_1](https://user-images.githubusercontent.com/113295774/200120447-0b6a6aa3-08c8-48c9-a8be-5c80321f7690.png)
