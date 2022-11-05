@@ -1,0 +1,41 @@
+220 (vsFTPd 3.0.5)
+AUTH TLS
+530 Please login with USER and PASS.
+AUTH SSL
+530 Please login with USER and PASS.
+USER uranus
+331 Please specify the password.
+PASS butterfly
+230 Login successful.
+CWD /home/uranus
+250 Directory successfully changed.
+TYPE A
+200 Switching to ASCII mode.
+PASV
+227 Entering Passive Mode (192,168,8,148,133,149).
+STOR sekret1.txt
+150 Ok to send data.
+226 Transfer complete.
+TYPE I
+200 Switching to Binary mode.
+PASV
+227 Entering Passive Mode (192,168,8,148,181,142).
+LIST
+150 Here comes the directory listing.
+226 Directory send OK.
+TYPE A
+200 Switching to ASCII mode.
+PASV
+227 Entering Passive Mode (192,168,8,148,201,90).
+STOR sekret2.txt
+150 Ok to send data.
+226 Transfer complete.
+CWD /tmp
+250 Directory successfully changed.
+TYPE I
+200 Switching to Binary mode.
+PASV
+227 Entering Passive Mode (192,168,8,148,192,198).
+LIST
+150 Here comes the directory listing.
+226 Directory send OK.
