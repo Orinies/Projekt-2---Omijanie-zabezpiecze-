@@ -102,7 +102,27 @@ Hasło: T0^^3k
 Dla podanych niżej hashy określ typ wykorzystanego algorytmu hashującego, a następnie złam hasło metodą słownikową.
 Hasła pochodzą ze słownika <b> rockyou </b>
 
-## Przypadek 1 
+1.	Przygotowanie pliku z haszami
+
+![zad2_1](https://user-images.githubusercontent.com/113295774/200123521-3f71e076-ef4f-426b-a8d8-dbc1367fc4bc.png)
+
+2.	Określenie typu haszy i ustalenie formatu w john the ripper na raw-md5 dla przypadku 1-5
+
+![zad2_21](https://user-images.githubusercontent.com/113295774/200123546-9df44ffe-ae92-4eb1-9d57-b50cc53d521f.png)
+
+![zad2_22](https://user-images.githubusercontent.com/113295774/200123552-71516029-1d3c-4615-8a49-dde8f6fc7b84.png)
+
+3.	Format md5 nie był odpowiedni dla przypadków 6 i 7 – szukanie odpowiedniego algorytmu
+
+![zad2_3](https://user-images.githubusercontent.com/113295774/200123568-8702a4c8-0a93-4f73-936f-a6917d09a022.png)
+
+4.	Ustalenie formatu w john the ripper na raw-SHA512 dla przypadku 6
+
+![zad2_4](https://user-images.githubusercontent.com/113295774/200123585-a6914b58-2a0f-41f1-8a21-98277dd50dcb.png)
+
+5.	Ustalenie formatu w john the ripper na raw-SHA256 dla przypadku 7
+
+![zad2_5](https://user-images.githubusercontent.com/113295774/200123607-548c78e5-12f0-4104-a859-241da3fa1350.png)
 
 
 # Zadanie 3 - Analiza ruchu HTTP
