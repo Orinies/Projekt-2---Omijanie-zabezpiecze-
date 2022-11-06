@@ -290,4 +290,16 @@ Ip.addr == „zadany adres ip”
 
 ![zad5_8](https://user-images.githubusercontent.com/113295774/200161668-68babc64-ac90-4543-8dad-be9662042359.png)
 
+# Zadanie 6 - Eternal Blue
 
+Atakujący: Kali Linux | Ofiara: Windows 7
+1. Przygotuj maszynę wirtualną z podatnością MS17-010 (np. Windows 7) i umieść ją w tej
+samej sieci co Kali Linux.
+Atakujący:
+2. Wykryj i potwierdź podatność (np. nmapem).
+3. Wykorzystaj podatność korzystając z frameworka Metasploit (nie jest wymagana
+eskalacja uprawnień).
+Dla chętnych:
+1. Wykorzystaj podatność MS17-010 bez użycia Metasploita.
+
+## Rozwiązanie
