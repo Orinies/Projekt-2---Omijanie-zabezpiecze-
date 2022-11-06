@@ -252,3 +252,42 @@ Albo Show Packet Bytes i Save as…
 6. Odszukaj w zapisanym ruchu sieciowym zawartość przesłanego i ściągniętych plików.
 
 ## Rozwiązanie
+1.	Uruchamiamy Wireshark na naszym kliencie sftp i nakazujemy mu przechwytywanie pakietów na interfejsie, który dostarcza nam komunikację z serwerem ( w naszym wypadku jest to eth0).
+
+![zad5_1](https://user-images.githubusercontent.com/113295774/200161600-a87d0182-8aef-4700-ab40-338d9829bf3d.png)
+
+2.	Otwieramy terminal i nawiązujemy połączenie z serwerem 
+
+![zad5_2](https://user-images.githubusercontent.com/113295774/200161610-4949d80d-5fb4-4eff-a252-a5bc59d8b874.png)
+
+Składnia to „login” potem łącznik „@” a potem adres serwera
+
+3.	Szukamy interesującego nas pliku poleceniami:
+
+Ls – pokazuje zawartość katalogu
+
+Cd – zmienia katalog
+
+4.	Pobieramy pliki poleceniem get, wysyłamy poleceniem put, są również polecenia mkdir do tworzenia katalogu lub delete do kasowania
+5.	
+![zad5_4](https://user-images.githubusercontent.com/113295774/200161625-9a8179f5-e3c5-47fe-a45d-de7c42dc15dd.png)
+
+5.	Cały ruch odnajdujemy w Wiresharku wyszukując serwer poleceniem ip
+
+Ip.addr == „zadany adres ip”
+
+![zad5_5](https://user-images.githubusercontent.com/113295774/200161642-dedafb3d-fc04-4c0c-a2e6-8c5ca182617f.png)
+
+6.	Klikamy prawym przyciskiem myszy i robimy TCP Follow i widzimy cały ruch, który niestety jest zaszyfrowany
+
+![zad5_6](https://user-images.githubusercontent.com/113295774/200161655-11b12ffe-e1c8-43f8-8263-f8a27e0a85f7.png)
+
+7.	Niestety nawet znalezienie transakcji kluczy nie pomoże nam w odszyfrowaniu wiadomości:
+
+![zad5_7](https://user-images.githubusercontent.com/113295774/200161661-353ec874-7822-46fe-a912-d1312a7d2de5.png)
+
+8.	Jak wskazane na zdjęciu pakiety są zaszyfrowane, ruchu nie podsłuchamy a więc plików nie wyjmiemy.
+
+![zad5_8](https://user-images.githubusercontent.com/113295774/200161668-68babc64-ac90-4543-8dad-be9662042359.png)
+
+
