@@ -299,10 +299,8 @@ Atakujący:
 2. Wykryj i potwierdź podatność (np. nmapem).
 3. Wykorzystaj podatność korzystając z frameworka Metasploit (nie jest wymagana
 eskalacja uprawnień).
-Dla chętnych:
-1. Wykorzystaj podatność MS17-010 bez użycia Metasploita.
 
-## Rozwiązanie:
+## Przypdadek 1 :
 
 1. Przygotowanie środowiska testowego – VM kali linux oraz Windows Server 2008R2
 
@@ -333,3 +331,46 @@ Dla chętnych:
 7. Atak się powiódł. Konsola metepreter pozwala nam wykonywać komendy w skompromitowanym systemie, o ile podamy je poprawnie.
 
 ![zad6_8](https://github.com/Orinies/Projekt-2---Omijanie-zabezpiecze-/blob/main/Zad6/6.8.png)
+
+## Przypdadek 2 :
+
+Dla chętnych:
+2. Wykorzystaj podatność MS17-010 bez użycia Metasploita:
+
+1. Przygotowanie środowiska testowego – Kali Linux + podatny Windows Server 2008
+
+2. Sklonowanie repozytorium z odpowiednim exploitem do maszyny Kali Linux (https://github.com/3ndG4me/AutoBlue-MS17-010)
+
+![zad6.1_1](https://github.com/Orinies/Projekt-2---Omijanie-zabezpiecze-/blob/main/Zad6.1/1.png)
+
+3. Za pomocą komendy pip install instalujemy wymagane przez exploit składniki
+
+![zad6.1_2](https://github.com/Orinies/Projekt-2---Omijanie-zabezpiecze-/blob/main/Zad6.1/2.jpg)
+
+4. Za pomocą narzędzia nmap znajdujemy w sieci podatną maszynę (sudo nmap -sV -p 445 -O IP/24)
+
+![zad6.1_3](https://github.com/Orinies/Projekt-2---Omijanie-zabezpiecze-/blob/main/Zad6.1/3.png)
+
+5. Komendą chmod nadajemy sobie uprawnienia do uruchomienia shell_prep.sh i uruchamiamy konsolę konfiguracyjną
+
+![zad6.1_4](https://github.com/Orinies/Projekt-2---Omijanie-zabezpiecze-/blob/main/Zad6.1/4.png)
+
+6. Konfigurujemy exploita zgodnie z preferencjami
+
+![zad6.1_5](https://github.com/Orinies/Projekt-2---Omijanie-zabezpiecze-/blob/main/Zad6.1/5.png)
+
+7. W drugim oknie terminala rozpoczynamy nasłuchiwanie na wskazanym w trakcie konfiguracji porcie
+
+![zad6.1_6](https://github.com/Orinies/Projekt-2---Omijanie-zabezpiecze-/blob/main/Zad6.1/6.png)
+
+8. W głównym folderze Auto Blue za pomocą chmod nadajemy sobie uprawnienia do exploita eternalblue wersja 7 (odpowiednia dla Windows Server 2008)
+
+![zad6.1_7](https://github.com/Orinies/Projekt-2---Omijanie-zabezpiecze-/blob/main/Zad6.1/7.png)
+
+9. Poniższą komendą uruchamiamy skrypt -udało się!
+
+![zad6.1_8](https://github.com/Orinies/Projekt-2---Omijanie-zabezpiecze-/blob/main/Zad6.1/8.png)
+
+10. Wracamy do drugiego okna – jesteśmy w cmd skompromitowanego systemu
+
+![zad6.1_9](https://github.com/Orinies/Projekt-2---Omijanie-zabezpiecze-/blob/main/Zad6.1/9.png)
