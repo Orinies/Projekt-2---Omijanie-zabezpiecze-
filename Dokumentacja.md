@@ -303,3 +303,33 @@ Dla chętnych:
 1. Wykorzystaj podatność MS17-010 bez użycia Metasploita.
 
 ## Rozwiązanie:
+
+1. Przygotowanie środowiska testowego – VM kali linux oraz Windows Server 2008R2
+
+![zad6_1](https://github.com/Orinies/Projekt-2---Omijanie-zabezpiecze-/blob/main/Zad6/6.1.png)
+
+![zad6_2](https://github.com/Orinies/Projekt-2---Omijanie-zabezpiecze-/blob/main/Zad6/6.2.png)
+
+2. Kolejnym krokiem było skanowanie sieci za pomocą narzędzi nmap w konsoli Kali Linux w celu znalezienia maszyny z podatnością EternalBlue
+
+![zad6_3](https://github.com/Orinies/Projekt-2---Omijanie-zabezpiecze-/blob/main/Zad6/6.3.png)
+
+3. Po znalezieniu odpowiedniego adresu IP następuje uruchomienie narzędzia Metasploit przy użyciu komendy msfconsole w terminalu Kali Linux – wita nas Krowa.
+
+![zad6_4](https://github.com/Orinies/Projekt-2---Omijanie-zabezpiecze-/blob/main/Zad6/6.4.png)
+
+4. W konsoli Metasploit wyszukujemy interesującej nas podatności za pomocą komendy „search eternal blue”
+
+![zad6_5](https://github.com/Orinies/Projekt-2---Omijanie-zabezpiecze-/blob/main/Zad6/6.5.png)
+
+5. Owocne poszukiwania wieńczymy komendą use 0, która uzbraja konsolę Metasploit w interesujący nas exploit, a następnie komendą options sprawdzamy, których wartości brakuje do prawidłowego przeprowadzenia ataku
+
+![zad6_6](https://github.com/Orinies/Projekt-2---Omijanie-zabezpiecze-/blob/main/Zad6/6.6.png)
+
+6. Za pomocą komendy set RHOSTS ustawiamy ip Maszyny-Ofiary. Uzbrojeni atakujemy za pomocą komendy run
+
+![zad6_7](https://github.com/Orinies/Projekt-2---Omijanie-zabezpiecze-/blob/main/Zad6/6.7.png)
+
+7. Atak się powiódł. Konsola metepreter pozwala nam wykonywać komendy w skompromitowanym systemie, o ile podamy je poprawnie.
+
+![zad6_8](https://github.com/Orinies/Projekt-2---Omijanie-zabezpiecze-/blob/main/Zad6/6.8.png)
