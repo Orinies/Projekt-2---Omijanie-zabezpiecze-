@@ -365,12 +365,12 @@ Dla chętnych:
 
 8. W głównym folderze Auto Blue za pomocą chmod nadajemy sobie uprawnienia do exploita eternalblue wersja 7 (odpowiednia dla Windows Server 2008)
 
-![zad6.1_7](https://github.com/Orinies/Projekt-2---Omijanie-zabezpiecze-/blob/main/Zad6.1/7.png)
+![zad6.1_8](https://github.com/Orinies/Projekt-2---Omijanie-zabezpiecze-/blob/main/Zad6.1/8.png)
 
 9. Poniższą komendą uruchamiamy skrypt -udało się!
 
-![zad6.1_8](https://github.com/Orinies/Projekt-2---Omijanie-zabezpiecze-/blob/main/Zad6.1/8.png)
+![zad6.1_9](https://github.com/Orinies/Projekt-2---Omijanie-zabezpiecze-/blob/main/Zad6.1/9.png)
 
 10. Wracamy do drugiego okna – jesteśmy w cmd skompromitowanego systemu
 
-![zad6.1_9](https://github.com/Orinies/Projekt-2---Omijanie-zabezpiecze-/blob/main/Zad6.1/9.png)
+![zad6.1_9](https://github.com/Orinies/Projekt-2---Omijanie-zabezpiecze-/blob/main/Zad6.1/10.png)
