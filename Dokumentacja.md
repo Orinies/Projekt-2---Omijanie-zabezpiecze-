@@ -302,4 +302,4 @@ eskalacja uprawnień).
 Dla chętnych:
 1. Wykorzystaj podatność MS17-010 bez użycia Metasploita.
 
-## Rozwiązanie
+## Rozwiązanie:
